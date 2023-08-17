@@ -21,7 +21,7 @@ public class CommentEntity {
     private String content;
 
     @ManyToOne
-    private CelestialObjectEntity celestialObjectEntities;
+    private CelestialObjectEntity celestialObjectEntity;
 
     @ManyToOne
     private AppUserEntity appuserEntity;

@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface CommentEntityRepository extends CrudRepository<CommentEntity, Integer> {
-    List<CommentEntity> findByCelestialObjectId(int celestialObjectId);
+    List<CommentEntity> findByCelestialObjectId(int id);
 }

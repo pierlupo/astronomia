@@ -32,8 +32,8 @@ public class CommentRepositoryImpl implements CommentRepository {
     }
 
     @Override
-    public List<Comment> findByCelestialObjectId(int celestialObjectId) {
-        List<CommentEntity> commentEntities = commentEntityRepository.findByCelestialObjectId(celestialObjectId);
+    public List<Comment> findByCelestialObjectId(int id) {
+        List<CommentEntity> commentEntities = commentEntityRepository.findByCelestialObjectId(id);
         return commentEntities.stream()
                 .map(entity -> modelMapper.map(entity, Comment.class))
                 .collect(Collectors.toList());
