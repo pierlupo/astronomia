@@ -6,6 +6,7 @@ import com.domaine.port.CelestialObjectRepository;
 import com.domaine.port.CelestialObjectService;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,8 +19,8 @@ public class CelestialObjectImpl implements CelestialObjectService {
     }
 
     @Override
-    public CelestialObject createCelestialObject(String name, String type, LocalDateTime date, List<Comment> comments) {
-        CelestialObject celestialObject = new CelestialObject(name, type, LocalDateTime.now());
+    public CelestialObject createCelestialObject(String name, String type, Date date) {
+        CelestialObject celestialObject = new CelestialObject(name, type, date);
         return celestialObjectRepository.save(Optional.of(celestialObject));
     }
 

@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -20,7 +21,7 @@ public class CelestialObjectRequestDTO {
 
     private String type;
 
-    private LocalDateTime date;
+    private Date date;
 
     private List<Comment> comments;
 }

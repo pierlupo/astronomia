@@ -32,8 +32,7 @@ public class CelestialObjectController {
                         celestialObjectService.createCelestialObject(
                                 celestialObjectRequestDTO.getName(),
                                 celestialObjectRequestDTO.getType(),
-                                celestialObjectRequestDTO.getDate(),
-                                celestialObjectRequestDTO.getComments()),
+                                celestialObjectRequestDTO.getDate()),
                         CelestialObjectResponseDTO.class)
         );
     }

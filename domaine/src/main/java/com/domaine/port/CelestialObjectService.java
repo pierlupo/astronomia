@@ -4,12 +4,13 @@ import com.domaine.model.CelestialObject;
 import com.domaine.model.Comment;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 public interface CelestialObjectService {
 
-    CelestialObject createCelestialObject(String name, String type, LocalDateTime date, List<Comment> comments);
+    CelestialObject createCelestialObject(String name, String type, Date date);
 
     List<CelestialObject> getAllCelestialObjects();
 

@@ -13,13 +13,18 @@ public class CelestialObject {
 
     private String type;
 
-    private LocalDateTime date;
-
-    private Date dates;
+    private Date date;
 
     private List<Comment> comments;
 
-    public CelestialObject(String name, String type, LocalDateTime date) {
+    public CelestialObject(String name, String type, Date date, List<Comment> comments) {
+        this.name = name;
+        this.type = type;
+        this.date = date;
+        this.comments = comments;
+    }
+
+    public CelestialObject(String name, String type, Date date) {
         this.name = name;
         this.type = type;
         this.date = date;
@@ -44,7 +49,7 @@ public class CelestialObject {
         return type;
     }
 
-    public LocalDateTime getDate() {
+    public Date getDate() {
         return date;
     }
 
@@ -56,7 +61,7 @@ public class CelestialObject {
         this.type = type;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
