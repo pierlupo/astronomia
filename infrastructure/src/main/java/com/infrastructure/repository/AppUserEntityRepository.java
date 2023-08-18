@@ -10,5 +10,6 @@ import java.util.Optional;
 public interface AppUserEntityRepository extends CrudRepository <AppUserEntity, Integer>{
     Optional<AppUserEntity> findByUsername(String username);
     AppUserEntity findByUsernameAndPassword(String username, String password);
-    AppUserEntity findByUserName(String username);
+
+//    AppUserEntity findByUserName(String username);
 }

@@ -3,7 +3,7 @@ package com.presentation.security;
 
 
 import com.domaine.model.AppUser;
-import com.domaine.port.AppUserRepository;
+import com.domaine.port.AppUserService;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -18,16 +18,19 @@ import java.util.Set;
 @Service
 public class CustomUserDetailService implements UserDetailsService {
 
-    private final AppUserRepository appUserRepository;
 
-    public CustomUserDetailService(AppUserRepository appUserRepository) {
-        this.appUserRepository = appUserRepository;
+
+
+   private final AppUserService appUserService;
+
+    public CustomUserDetailService(AppUserService appUserService) {
+        this.appUserService = appUserService;
     }
 
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        AppUser userApp = appUserRepository.findByUserName(username).get();
+        AppUser userApp = appUserService.getUserByUserName(username).get();
         Set<GrantedAuthority> authorities = new HashSet<>();
         authorities.add(new SimpleGrantedAuthority("user"));
         return new User(userApp.getUsername(), userApp.getPassword(),authorities);

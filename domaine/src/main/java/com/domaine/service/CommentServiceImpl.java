@@ -35,10 +35,10 @@ public class CommentServiceImpl implements CommentService {
         throw new RuntimeException();
     }
 
-    @Override
-    public List<Comment> findCelestialObjectComments(int id) {
-        return commentRepository.findByCelestialObject(id);
-    }
+//    @Override
+//    public List<Comment> findCelestialObjectComments(int id) {
+//        return commentRepository.findByCelestialObjectId(id);
+//    }
 
     @Override
     public void deleteComment(int id) {

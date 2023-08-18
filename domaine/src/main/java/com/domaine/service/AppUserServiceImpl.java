@@ -26,7 +26,7 @@ public class AppUserServiceImpl implements AppUserService {
     }
 
     @Override
-    public AppUser getUserByUserName(String username) {
+    public Optional<AppUser> getUserByUserName(String username) {
         return appUserRepository.findByUsername(username);
     }
 

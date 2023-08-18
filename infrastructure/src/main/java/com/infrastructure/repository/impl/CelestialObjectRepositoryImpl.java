@@ -5,12 +5,13 @@ import com.domaine.port.CelestialObjectRepository;
 import com.infrastructure.entity.CelestialObjectEntity;
 import com.infrastructure.repository.CelestialObjectEntityRepository;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
+@Repository
 public class CelestialObjectRepositoryImpl implements CelestialObjectRepository {
 
     private final CelestialObjectEntityRepository celestiaObjectEntityRepository;

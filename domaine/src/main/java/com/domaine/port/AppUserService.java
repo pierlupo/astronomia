@@ -8,7 +8,7 @@ public interface AppUserService {
 
     AppUser createUser(String username, String password);
     AppUser getUserByUserNameAndPassword(String username, String password);
-    AppUser getUserByUserName(String username);
+    Optional<AppUser> getUserByUserName(String username);
     Optional<AppUser> getUserById(int id);
     void deleteAppUser(int id);
 }

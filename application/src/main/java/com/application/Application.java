@@ -17,10 +17,10 @@ public class Application {
         infra.setDefaultProperties(Collections.singletonMap("server.port", "8088"));
         ConfigurableApplicationContext infraContext = infra.run();
 
-        SpringApplication apiRest = new SpringApplication(PresentationConfig.class);
-        apiRest.setDefaultProperties(Collections.singletonMap("server.port", "8087"));
-        apiRest.addInitializers(new PresentationInitializer(infraContext));
-        ConfigurableApplicationContext apiRestContext = apiRest.run();
+        SpringApplication presentation = new SpringApplication(PresentationConfig.class);
+        presentation.setDefaultProperties(Collections.singletonMap("server.port", "8087"));
+        presentation.addInitializers(new PresentationInitializer(infraContext));
+        ConfigurableApplicationContext presentationContext = presentation.run();
     }
 
 }

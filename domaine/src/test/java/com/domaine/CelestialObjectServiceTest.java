@@ -23,18 +23,18 @@ public class CelestialObjectServiceTest {
     @InjectMocks
     private CelestialObjectService celestialObjectService;
 
-//   @Test
-//    public void shouldAddNewCelestialObjectWhenValidDataProvided() {
-//        //Arrange
-//       CelestialObject celestialObject = new CelestialObject("lune", "satellite", new Date());
-//        Mockito.when(celestialObjectRepository.save(Optional.of(celestialObject))).thenReturn(celestialObject);
-//
-//        //Act
-//        CelestialObject result = celestialObjectService.createCelestialObject("lune", "satellite",  new Date());
-//
-//        //Assert
-//        Assertions.assertEquals(celestialObject, result);
-//    }
+   @Test
+    public void shouldAddNewCelestialObjectWhenValidDataProvided() {
+        //Arrange
+        CelestialObject celestialObject = new CelestialObject("lune", "satellite", new Date());
+        Mockito.when(celestialObjectRepository.save(Optional.of(celestialObject))).thenReturn(celestialObject);
+
+        //Act
+        CelestialObject result = celestialObjectService.createCelestialObject("lune", "satellite",  new Date());
+
+        //Assert
+        Assertions.assertEquals(celestialObject, result);
+    }
 
 
     @Test

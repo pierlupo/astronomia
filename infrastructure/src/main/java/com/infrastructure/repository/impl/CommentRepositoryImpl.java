@@ -1,10 +1,7 @@
 package com.infrastructure.repository.impl;
 
-
-import com.domaine.model.CelestialObject;
 import com.domaine.model.Comment;
 import com.domaine.port.CommentRepository;
-import com.infrastructure.entity.CelestialObjectEntity;
 import com.infrastructure.entity.CommentEntity;
 import com.infrastructure.repository.CommentEntityRepository;
 import org.modelmapper.ModelMapper;
@@ -34,13 +31,13 @@ public class CommentRepositoryImpl implements CommentRepository {
         return modelMapper.map(commentEntity, Comment.class);
     }
 
-    @Override
-    public List<Comment> findByCelestialObject(int id) {
-        List<CommentEntity> commentEntities = commentEntityRepository.findByCelestialObjectEntity(id);
-        return commentEntities.stream()
-                .map(entity -> modelMapper.map(entity, Comment.class))
-                .collect(Collectors.toList());
-    }
+//    @Override
+//    public List<Comment> findByCelestialObject(int id) {
+//        List<CommentEntity> commentEntities = commentEntityRepository.findByCelestialObjectEntity(id);
+//        return commentEntities.stream()
+//                .map(entity -> modelMapper.map(entity, Comment.class))
+//                .collect(Collectors.toList());
+//    }
 
     @Override
     public void delete(Optional<Comment> comment) {

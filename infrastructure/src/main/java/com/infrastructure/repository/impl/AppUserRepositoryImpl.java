@@ -3,12 +3,12 @@ package com.infrastructure.repository.impl;
 import com.domaine.model.AppUser;
 import com.domaine.port.AppUserRepository;
 import com.infrastructure.entity.AppUserEntity;
-import com.infrastructure.entity.CelestialObjectEntity;
 import com.infrastructure.repository.AppUserEntityRepository;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
-
+@Repository
 public class AppUserRepositoryImpl implements AppUserRepository {
 
     private final ModelMapper modelMapper;
@@ -36,18 +36,18 @@ public class AppUserRepositoryImpl implements AppUserRepository {
     }
 
     @Override
-    public AppUser findByUsername(String username) {
-        return modelMapper.map(
-                appUserEntityRepository.findByUsername(username), AppUser.class
-        );
-    }
-
-    @Override
-    public Optional<AppUser> findByUserName(String username) {
+    public Optional<AppUser> findByUsername(String username) {
         return Optional.ofNullable(modelMapper.map(
-                appUserEntityRepository.findByUserName(username), AppUser.class
+                appUserEntityRepository.findByUsername(username), AppUser.class
         ));
     }
+
+//    @Override
+//    public Optional<AppUser> findByUserName(String username) {
+//        return Optional.ofNullable(modelMapper.map(
+//                appUserEntityRepository.findByUsername(username), AppUser.class
+//        ));
+//    }
 
     @Override
     public AppUser findById(int id) {

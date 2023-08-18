@@ -10,9 +10,9 @@ public interface AppUserRepository {
 
     AppUser findByUsernameAndPassword(String username, String password);
 
-    AppUser findByUsername(String username);
+    Optional<AppUser> findByUsername(String username);
 
-    Optional<AppUser> findByUserName(String username);
+//    Optional<AppUser> findByUserName(String username);
 
     AppUser findById(int id);
 

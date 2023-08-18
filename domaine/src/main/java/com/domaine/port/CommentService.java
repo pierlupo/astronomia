@@ -9,7 +9,7 @@ public interface CommentService {
 
     Comment saveComment(String content, int appUserId, int celestialObjectID);
 
-    List<Comment> findCelestialObjectComments(int celestialObjectID);
+//    List<Comment> findCelestialObjectComments(int celestialObjectID);
 
     void deleteComment(int id);
 
