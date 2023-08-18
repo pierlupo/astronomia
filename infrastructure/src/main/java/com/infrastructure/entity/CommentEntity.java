@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name="comment")
 public class CommentEntity {
 
     @Id
@@ -19,6 +20,7 @@ public class CommentEntity {
     private int id;
 
     private String content;
+
 
     @ManyToOne
     private CelestialObjectEntity celestialObjectEntity;

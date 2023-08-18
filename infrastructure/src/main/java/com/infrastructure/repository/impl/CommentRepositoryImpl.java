@@ -1,13 +1,16 @@
 package com.infrastructure.repository.impl;
 
 
+import com.domaine.model.CelestialObject;
 import com.domaine.model.Comment;
 import com.domaine.port.CommentRepository;
+import com.infrastructure.entity.CelestialObjectEntity;
 import com.infrastructure.entity.CommentEntity;
 import com.infrastructure.repository.CommentEntityRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -32,8 +35,8 @@ public class CommentRepositoryImpl implements CommentRepository {
     }
 
     @Override
-    public List<Comment> findByCelestialObjectId(int id) {
-        List<CommentEntity> commentEntities = commentEntityRepository.findByCelestialObjectId(id);
+    public List<Comment> findByCelestialObject(int id) {
+        List<CommentEntity> commentEntities = commentEntityRepository.findByCelestialObjectEntity(id);
         return commentEntities.stream()
                 .map(entity -> modelMapper.map(entity, Comment.class))
                 .collect(Collectors.toList());
@@ -53,6 +56,12 @@ public class CommentRepositoryImpl implements CommentRepository {
 
     @Override
     public List<Comment> findAll() {
-        return null;
+        return convertToListComments((List<CommentEntity>) commentEntityRepository.findAll());
+    }
+
+    private List<Comment> convertToListComments(List<CommentEntity> commentEntities) {
+        List<Comment> comments = new ArrayList<>();
+        commentEntities.forEach(c ->comments.add(modelMapper.map(c, Comment.class)));
+        return comments;
     }
 }

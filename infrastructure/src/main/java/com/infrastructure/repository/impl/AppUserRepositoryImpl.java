@@ -3,6 +3,7 @@ package com.infrastructure.repository.impl;
 import com.domaine.model.AppUser;
 import com.domaine.port.AppUserRepository;
 import com.infrastructure.entity.AppUserEntity;
+import com.infrastructure.entity.CelestialObjectEntity;
 import com.infrastructure.repository.AppUserEntityRepository;
 import org.modelmapper.ModelMapper;
 
@@ -57,6 +58,6 @@ public class AppUserRepositoryImpl implements AppUserRepository {
 
     @Override
     public void delete(Optional<AppUser> appUser) {
-
+        appUserEntityRepository.delete(modelMapper.map(appUser, AppUserEntity.class));
     }
 }

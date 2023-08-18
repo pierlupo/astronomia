@@ -36,8 +36,8 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public List<Comment> findCelestialObjectComments(int celestialObjectId) {
-        return commentRepository.findByCelestialObjectId(celestialObjectId);
+    public List<Comment> findCelestialObjectComments(int id) {
+        return commentRepository.findByCelestialObject(id);
     }
 
     @Override

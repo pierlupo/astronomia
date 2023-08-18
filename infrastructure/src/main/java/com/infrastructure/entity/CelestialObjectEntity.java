@@ -1,14 +1,12 @@
 package com.infrastructure.entity;
 
-
-import com.domaine.model.Comment;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -16,6 +14,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name="celestial_object")
 public class CelestialObjectEntity {
 
     @Id
@@ -26,7 +25,7 @@ public class CelestialObjectEntity {
 
     private String type;
 
-    private LocalDateTime date;
+    private Date date;
 
     @OneToMany
     private List<CommentEntity> commentEntities;
