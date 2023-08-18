@@ -8,6 +8,7 @@ import java.util.Optional;
 public interface CommentRepository {
 
     Comment save(Comment comment);
+
 //    List<Comment> findByCelestialObjectId(int celestialObjectId);
     void delete(Optional<Comment> comment);
     Comment findById(int id);

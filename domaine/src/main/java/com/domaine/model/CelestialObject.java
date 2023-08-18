@@ -1,6 +1,6 @@
 package com.domaine.model;
 
-import java.time.LocalDateTime;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -34,6 +34,10 @@ public class CelestialObject {
     public CelestialObject(String name, String type) {
         this.name = name;
         this.type = type;
+    }
+
+    public CelestialObject() {
+
     }
 
     public int getId() {
