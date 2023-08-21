@@ -27,6 +27,7 @@ public class AppUserEntity {
     private String password;
 
     @OneToMany
+    @JoinColumn(name = "comment_id", nullable = false)
     private List<CommentEntity> commentEntities;
 
 

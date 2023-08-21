@@ -28,5 +28,6 @@ public class CelestialObjectEntity {
     private Date date;
 
     @OneToMany
+    @JoinColumn(name = "id_comment", nullable = false)
     private List<CommentEntity> commentEntities;
 }

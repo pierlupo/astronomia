@@ -23,8 +23,10 @@ public class CommentEntity {
 
 
     @ManyToOne
+    @JoinColumn(name = "celestialObject_id", nullable = false)
     private CelestialObjectEntity celestialObjectEntity;
 
     @ManyToOne
+    @JoinColumn(name = "appuser_id", nullable = false)
     private AppUserEntity appuserEntity;
 }
